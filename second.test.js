@@ -17,7 +17,7 @@ const {expect} = require("@playwright/test");
   
   await page.pause();
 
-  await expect(page.locator("text=Вы ввели неправильно логин или пароль"));
+  expect(await page.textContent("[data-testid=login-error-hint]")).toEqual("Вы ввели неправильно логин или пароль");
 
   await browser.close();
 })();

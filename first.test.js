@@ -18,8 +18,7 @@ const { email, password } = require('./user.js');
 
   await page.pause();
 
-  await expect("Мои курсы и профессии").toEqual(await page.textContent("h2"));
-  await expect(page.locator("text=Мои курсы и профессии"));
+  await expect(await page.textContent("h2")).toEqual("Мои курсы и профессии");
 
   await browser.close();
   
